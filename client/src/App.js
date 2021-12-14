@@ -39,13 +39,15 @@ export default () => {
             <PrivateRoute path="/courses/:id/update" component={CourseUpdateWithContext} />
 
             <Route exact path="/" component={CoursesWithContext} />
-            <Route path="/courses/:id" component={CourseDetailWithContext} />
-            <Route path="/signin" component={UserSignInWithContext} />
-            <Route path="/signup" component={UserSignUpWithContext} />
-            <Route path="/signout" component={UserSignOutWithContext} />
-            <Route path="/notfound" component={NotFound} />
-            <Route path="/forbidden" component={Forbidden} />
-            <Route path="/error" component={UnhandledError} />
+            <Route exact path="/courses/:id" component={CourseDetailWithContext} />
+            <Route exact path="/signin" component={UserSignInWithContext} />
+            <Route exact path="/signup" component={UserSignUpWithContext} />
+            <Route exact path="/signout" component={UserSignOutWithContext} />
+            <Route exact path="/forbidden" component={Forbidden} />
+            <Route exact path="/error" component={UnhandledError} />
+            <Route exact path="/notfound" component={NotFound} />
+            <Route component={NotFound} />
+
           </Switch>
     </BrowserRouter>
 

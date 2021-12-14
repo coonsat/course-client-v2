@@ -44,8 +44,9 @@ export default class CourseDetail extends Component {
                         { context.authenticatedUser && 
                             context.authenticatedUser.id === this.state.course.User.id ? 
                             <div className="actions--bar">
-                                <Link to={`/courses/${this.state.course.id}/update`} className="button">Update Course</Link>
-                                <Link to='' onClick={this.delete} className="button">Delete Course</Link>
+                                <Link className="button" to={`/courses/${this.state.course.id}/update`} >Update Course</Link>
+                                <Link className="button" to='' onClick={this.delete}>Delete Course</Link>
+                                <Link className="button button-secondary" to={'/'}>Return to List</Link>
                             </div>
                             :
                             null

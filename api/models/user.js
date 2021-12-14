@@ -81,7 +81,7 @@ module.exports = (sequelize, DataTypes) => {
           msg: 'A password is required'
         },
         customValidator(value) {
-          if (value.length < 6 || value.length > 10) {
+          if (value.length < 6 && value.length > 10) {
             throw new Error("Length of password needs to be between 6 and 10 characters long");
           }
         }

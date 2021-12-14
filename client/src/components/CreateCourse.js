@@ -78,31 +78,23 @@ export default class CreateCourse extends Component {
         const newCourse = {title, description, estimatedTime, materialsNeeded, userId, author};
 
         // Create course and get the id assigned to it
+        // This route returns a location url. We can use this 
+        // to redirect the user to the detail page as opposed to have to 
+        // making another API call to match the specific course
         context.actions.createCourse( newCourse, context.authenticatedUser )
-            .then(res => {
-                if (res === null) {
+            .then(response => {
+                if (response.url) {
                     console.log(`Course ${title} created successfully`);
+                    this.props.history.push(response.url);
                 } else {
                     this.setState({
-                        error: res
+                        errors: response
                     })
                 }
              })
             .catch(err => {
                 console.log(`There was an error: ${err}`);
             });
-
-        // Obtain id of newly created course and direct user to the detail page. 
-        context.actions.getCourses()
-        .then(courses => {
-            return courses.find(course => course.title === title);
-        })
-        .then(course => {
-            this.props.history.push(`/courses/${course.id}`)
-        })
-        .catch( err => {
-            console.log(`${title} was not found`);
-        })
     };
 
     cancel = () => {

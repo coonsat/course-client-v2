@@ -3,8 +3,8 @@ import React from 'react'
 const NotFound = () => {
     return (
         <div className="wrap">
-            <h2>The page couldn't be found</h2>
-            <p>We tried looking but couldn't find what you were looking for :(</p>
+            <h2>Not Found</h2>
+            <p>Sorry! We couldn't find the page you were looking for.</p>
         </div>
     )
 }

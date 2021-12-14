@@ -10,7 +10,6 @@ export default (props) => {
     } = props;
 
     function handleSubmit(event) {
-        console.log(event);
         event.preventDefault();
         submit();
     }

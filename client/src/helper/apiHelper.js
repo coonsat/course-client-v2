@@ -52,7 +52,6 @@ export default class apiHeler {
                 return data.errors
             });
         } else {
-            console.log('in last error')
             throw new Error();
         }
     }
@@ -85,12 +84,9 @@ export default class apiHeler {
 
     async createCourse( newCourse, user ) {
         const response = await this.api('/courses', 'POST', newCourse, true, user);
-        console.log(response);
-        console.log(newCourse);
-        console.log(user);
         if (response.status === 201) {
-            return null;
-        } else if (response.state === 400) {
+            return response;
+        } else if (response.status === 400) {
             return response.json().then(data => {
                 return data.errors;
             })

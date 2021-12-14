@@ -14,10 +14,10 @@ const Header = ({ context }) => {
                         {authUser ?
                             // Show user name and sign out button if user already signed in
                             <ul className="header--signedin">
-                            <Fragment>
-                                    <li>Welcome {authUser.firstName} {authUser.lastName}</li>
-                                    <li><Link to='/signout'>Sign Out</Link></li>
-                            </Fragment>
+                                <Fragment>
+                                        <li>Welcome {authUser.firstName} {authUser.lastName}</li>
+                                        <li><Link to='/signout'>Sign Out</Link></li>
+                                </Fragment>
                             </ul>
                             :
                             // Show sign up and sign in button if user has yet to sign in
