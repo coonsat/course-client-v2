@@ -99,7 +99,7 @@ export default class apiHeler {
         const response = await this.api(`/courses/${updatedCourse.courseId}`, 'PUT', updatedCourse, true, user);
         if (response.status === 204) {
             return null;
-        } else if (response.status === 404) {
+        } else if (response.status === 400) {
             return response.json().then(data => {
                 return data.errors;
             })

@@ -109,15 +109,15 @@ export default class UpdateCourse extends Component {
 
         // Pass over the course details and the authenticated user as parameters
         context.actions.updateCourse( updatedCourse, authUser )
-            .then(res => {
-                if (res === null) {
+            .then(response => {
+                if (response === null) {
                     // If update successful then redirect back to course detail page
                     console.log(`${title} successfully updated`);
                     this.props.history.push(`courses/${courseId}`);
                 } else {
-                    // Get 404 errors and display them
+                    // Get 400 errors and display them
                     this.setState({
-                        errors: res
+                        errors: response
                     })
                 }
             })
