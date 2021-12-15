@@ -28,7 +28,7 @@ const UserSignInWithContext = withContext(UserSignIn);
 const UserSignUpWithContext = withContext(UserSignUp);
 const UserSignOutWithContext = withContext(UserSignOut)
 
-export default () => {
+const App = () => {
 
   return (
     <BrowserRouter>
@@ -53,3 +53,5 @@ export default () => {
 
   );
 };
+
+export default App;

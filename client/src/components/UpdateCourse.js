@@ -27,7 +27,7 @@ export default class UpdateCourse extends Component {
                             description: course.description,
                             estimatedTime: course.estimatedTime,
                             materialsNeeded: course.materialsNeeded,
-                            author: course.author
+                            author: course.User.firstName + ' ' + course.User.lastName
                         });
                     } else {
                         // Forward user to fobidden page if they don't own the course
@@ -109,16 +109,16 @@ export default class UpdateCourse extends Component {
 
         // Pass over the course details and the authenticated user as parameters
         context.actions.updateCourse( updatedCourse, authUser )
-            .then(response => {
-                if (response === null) {
-                    // If update successful then redirect back to course detail page
-                    console.log(`${title} successfully updated`);
-                    this.props.history.push(`courses/${courseId}`);
-                } else {
+            .then(errorList => {
+                if (errorList.length) {
                     // Get 400 errors and display them
                     this.setState({
-                        errors: response
+                        errors: errorList
                     })
+                } else {
+                    // If update successful then redirect back to course detail page
+                    console.log(`${title} successfully updated`);
+                    this.props.history.push(`/courses/${courseId}`);
                 }
             })
             .catch(err => {

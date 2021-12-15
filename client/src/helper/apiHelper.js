@@ -85,8 +85,12 @@ export default class apiHeler {
     async createCourse( newCourse, user ) {
         const response = await this.api('/courses', 'POST', newCourse, true, user);
         if (response.status === 201) {
+            // set location on response header 
+            // -> allows for redirect to new course detail page rather than back to the home page
+            response.Location = response.headers.get('Location');
             return response;
         } else if (response.status === 400) {
+            console.log('There was an error');
             return response.json().then(data => {
                 return data.errors;
             })
@@ -98,7 +102,7 @@ export default class apiHeler {
     async updateCourse( updatedCourse, user ) {
         const response = await this.api(`/courses/${updatedCourse.courseId}`, 'PUT', updatedCourse, true, user);
         if (response.status === 204) {
-            return null;
+            return [];
         } else if (response.status === 400) {
             return response.json().then(data => {
                 return data.errors;
@@ -111,7 +115,7 @@ export default class apiHeler {
     async deleteCourse( courseId, user ) {
         const response = await this.api(`/courses/${courseId}`, 'DELETE', null, true, user);
         if (response.status === 204) {
-            return null;
+            return [];
         } else if (response.status === 403) {
             return response.json().then(data => {
                 return data.errors;

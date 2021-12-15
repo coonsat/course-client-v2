@@ -20,7 +20,7 @@ export default class UserSignUp extends Component {
         } = this.state;
 
         return (
-            <div class="form--centered">
+            <div className="form--centered">
                 <h2>Sign Up</h2>
                 
                 <Form
@@ -30,6 +30,7 @@ export default class UserSignUp extends Component {
                   submitButtonText="Sign Up"
                   elements={() => (
                       <React.Fragment>
+                            <label htmlFor="firstName">First Name</label>
                             <input
                                 id="firstName"
                                 name="firstName"
@@ -37,6 +38,8 @@ export default class UserSignUp extends Component {
                                 value={firstName}
                                 onChange={this.change}
                                 placeholder="First name" />
+
+                            <label htmlFor="lastName">Last Name</label>
                             <input
                                 id="lastName"
                                 name="lastName"
@@ -44,6 +47,8 @@ export default class UserSignUp extends Component {
                                 value={lastName}
                                 onChange={this.change}
                                 placeholder="Last name" />
+
+                          <label htmlFor="emailAddress">Email Address</label>
                           <input
                                 id="emailAddress"
                                 name="emailAddress"
@@ -51,6 +56,8 @@ export default class UserSignUp extends Component {
                                 value={emailAddress}
                                 onChange={this.change}
                                 placeholder="Email" />
+
+                          <label htmlFor="password">Password</label>
                           <input
                                 id="password"
                                 name="password"
@@ -61,7 +68,7 @@ export default class UserSignUp extends Component {
                       </React.Fragment>
                   )}
                 >
-                    <button class="button" type="submit">Sign Up</button><button class="button button-secondary" onclick="event.preventDefault(); location.href='index.html';">Cancel</button>
+                    <button className="button" type="submit">Sign Up</button><button class="button button-secondary" onclick="event.preventDefault(); location.href='index.html';">Cancel</button>
                 </Form>
                 <p>Already have a user account? Click here to <a href="sign-in.html">sign in</a>!</p>
             </div>

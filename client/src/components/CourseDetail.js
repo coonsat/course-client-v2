@@ -41,16 +41,19 @@ export default class CourseDetail extends Component {
                 {this.state.loading ? 
                     <h3>Loading...</h3> : 
                     <>
-                        { context.authenticatedUser && 
-                            context.authenticatedUser.id === this.state.course.User.id ? 
-                            <div className="actions--bar">
-                                <Link className="button" to={`/courses/${this.state.course.id}/update`} >Update Course</Link>
-                                <Link className="button" to='' onClick={this.delete}>Delete Course</Link>
-                                <Link className="button button-secondary" to={'/'}>Return to List</Link>
-                            </div>
-                            :
-                            null
-                        }
+                        <div className="actions--bar">
+                            { context.authenticatedUser && 
+                                context.authenticatedUser.id === this.state.course.User.id ?
+                                    <React.Fragment>
+                                        <Link className="button" to={`/courses/${this.state.course.id}/update`} >Update Course</Link>
+                                        <Link className="button" to='' onClick={this.delete}>Delete Course</Link>
+                                    </React.Fragment>
+                                :
+                                null
+                            }
+                                    <Link className="button button-secondary" to={'/'}>Return to List</Link>
+                        </div>
+
                         
                         <h2>Course Detail</h2>
                         <form>
@@ -84,13 +87,13 @@ export default class CourseDetail extends Component {
     delete = () => {
         const { context } = this.props; 
         context.actions.deleteCourse(this.state.course.id, context.authenticatedUser)
-            .then( res => {
-                if (res === null) {
+            .then( errorList => {
+                if (errorList.length) {
+                    console.log(`Deleting course ${this.state.course.id} was unsuccessful: ${errorList}`);
+                    this.props.history.push('/error');
+                } else {
                     console.log(`Course ${this.state.course.id} successfully deleted`);
                     this.props.history.push('/');
-                } else {
-                    console.log(`Deleting course ${this.state.course.id} was unsuccessful: ${res}`);
-                    this.props.history.push('/error');
                 }
             })
             .catch(err => {

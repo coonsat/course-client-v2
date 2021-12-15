@@ -83,9 +83,9 @@ export default class CreateCourse extends Component {
         // making another API call to match the specific course
         context.actions.createCourse( newCourse, context.authenticatedUser )
             .then(response => {
-                if (response.url) {
+                if (response.Location) {
                     console.log(`Course ${title} created successfully`);
-                    this.props.history.push(response.url);
+                    this.props.history.push(response.Location);
                 } else {
                     this.setState({
                         errors: response

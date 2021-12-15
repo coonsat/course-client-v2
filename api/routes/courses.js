@@ -58,6 +58,7 @@ router.post('/', authenticateUser, asyncHandler(async(req, res) => {
             materialsNeeded: req.body.materialsNeeded,
             userId: user.id
         });
+        res.set('Access-Control-Expose-Headers', 'Location')
         res.status(201).location(`/courses/${Course.id}`).json();
     } catch (error) {
         if ( 
