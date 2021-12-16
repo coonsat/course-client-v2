@@ -37,7 +37,7 @@ export default class CourseDetail extends Component {
         const { context } = this.props;
 
         return (
-            <div className="wrap">
+            <main>
                 {this.state.loading ? 
                     <h3>Loading...</h3> : 
                     <>
@@ -78,7 +78,7 @@ export default class CourseDetail extends Component {
                     </>
                 } 
 
-            </div>
+            </main>
         )
     }
 

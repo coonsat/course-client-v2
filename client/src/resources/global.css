@@ -112,8 +112,8 @@ header nav a:hover {
   line-height: 1.5;
 }
 .actions--bar {
-  background: #e9e5f0;
-  padding: 1rem 0;
+  background: #B6FFF9;
+  padding: 1rem 3rem;
   margin: -2rem 0 2rem;
 }
 .validation--errors {
@@ -167,7 +167,7 @@ textarea {
   min-height: 300px;
 }
 .button {
-  background: #7c689b;
+  background: #3555F3;
   color: #fff;
   font-size: 1rem;
   padding: .75rem 1.5rem;
