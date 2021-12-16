@@ -1,5 +1,7 @@
 # Course Library Application with Backend
 
+![](images/ScreenshotHomepage.png)
+
 ## Contents
 * [Introduction](https://github.com/coonsat/project-10-techdegree#introduction)
 * [Getting Started](https://github.com/coonsat/project-10-techdegree#getting-started)
