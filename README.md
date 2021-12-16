@@ -1,11 +1,9 @@
 # Course Library Application with Backend
 
 ## Contents
-[Introduction](https://github.com/coonsat/project-10-techdegree#introduction)
-
-[Getting Started](https://github.com/coonsat/project-10-techdegree#getting-started)
-
-[Starting the Application](https://github.com/coonsat/project-10-techdegree#starting-the-application)
+*[Introduction](https://github.com/coonsat/project-10-techdegree#introduction)
+*[Getting Started](https://github.com/coonsat/project-10-techdegree#getting-started)
+*[Starting the Application](https://github.com/coonsat/project-10-techdegree#starting-the-application)
 
 
 ## Introduction
