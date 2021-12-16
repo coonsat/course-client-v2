@@ -2,8 +2,11 @@
 
 ## Contents
 [Introduction](https://github.com/coonsat/project-10-techdegree#introduction)
+
 [Getting Started](https://github.com/coonsat/project-10-techdegree#getting-started)
+
 [Starting the Application](https://github.com/coonsat/project-10-techdegree#starting-the-application)
+
 
 ## Introduction
 The application encompasses a full stack application for the purpose of courses administrators being able to manager their own content. 
