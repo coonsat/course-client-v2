@@ -8,7 +8,7 @@ const Header = ({ context }) => {
     return (
         <header>      
             <div className="wrap header--flex">
-                <h1 className="header--logo"><Link to='/'>Courses</Link></h1>
+                <h2 className="header--logo"><Link to='/'>Courses</Link></h2>
                 <nav>
                     <ul className="header--signedout">
                         {authUser ?

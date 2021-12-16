@@ -24,14 +24,14 @@ a {
   text-decoration: none;
 }
 .wrap {
-  max-width: 1250px;
+  max-width: 95%;
   margin: 0 auto;
   padding: 0 1rem;
 }
 header {
-  background: #57496e;
+  background: #3555F3;
   color: #fff;
-  padding: 1rem 0;
+  /* padding: 1rem 0; */
   margin-bottom: 2rem;
 }
 .header--flex {
@@ -62,7 +62,7 @@ header nav a:hover {
   margin-left: .5rem;
 }
 .course--module {
-  background: #7c689b;
+  background: #66B7FB;
   border-radius: .5rem;
   padding: 1.5rem;
   margin-bottom: 1.5rem;
@@ -80,7 +80,7 @@ header nav a:hover {
   font-size: 1.25rem;
 }
 .course--add--module {
-  background: #ddd9e4;
+  background: #D3FFF3;
   color: #57496e;
   font-weight: 300;
   font-size: 1.25rem;
